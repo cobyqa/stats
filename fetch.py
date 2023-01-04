@@ -54,7 +54,7 @@ def count_pypi(package, path):
 
 if __name__ == "__main__":
     archives = Path("archives").resolve(True)
-    with open(archives / "total.json") as f:
+    with open(archives / "total.json", "w") as f:
         json.dump({
             "github": count_github("cobyqa", "cobyqa", archives / "github.json"),
             "pypi": count_pypi("cobyqa", archives / "pypi.json"),
