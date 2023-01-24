@@ -820,6 +820,11 @@
         "downloads": 14
     },
     {
+        "category": "with_mirrors",
+        "date": "2023-01-22",
+        "downloads": 4
+    },
+    {
         "category": "without_mirrors",
         "date": "2022-07-14",
         "downloads": 1
