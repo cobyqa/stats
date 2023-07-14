@@ -1620,6 +1620,11 @@
         "downloads": 85
     },
     {
+        "category": "with_mirrors",
+        "date": "2023-07-12",
+        "downloads": 24
+    },
+    {
         "category": "without_mirrors",
         "date": "2022-07-14",
         "downloads": 1
