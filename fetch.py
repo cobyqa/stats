@@ -1,4 +1,6 @@
 import json
+import traceback
+import warnings
 from datetime import date
 from pathlib import Path
 
@@ -29,8 +31,12 @@ def _append(archive, count):
 
 def count_conda(package, path):
     """Download count for the Anaconda distribution."""
-    count = int(condastats.cli.overall(package))
     archive = _read_archive(path)
+    try:
+        count = int(condastats.cli.overall(package))
+    except ValueError as exc:
+        count = sum(map(lambda d: d["downloads"], archive))
+        warnings.warn(f"Could not fetch conda download count: {exc}\n{traceback.format_exc()}", RuntimeWarning)
     _append(archive, count)
     _write_archive(path, archive)
     return count
