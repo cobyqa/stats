@@ -34,7 +34,7 @@ def count_conda(package, path):
     archive = _read_archive(path)
     try:
         count = int(condastats.cli.overall(package))
-    except ValueError as exc:
+    except TypeError as exc:
         count = sum(map(lambda d: d["downloads"], archive))
         warnings.warn(f"Could not fetch conda download count: {exc}\n{traceback.format_exc()}", RuntimeWarning)
     _append(archive, count)
