@@ -4,7 +4,6 @@ from pathlib import Path
 
 import condastats.cli
 import pypistats
-from github import Github
 
 
 def _read_archive(path):
@@ -26,16 +25,6 @@ def _append(archive, count):
     if today not in {entry["date"] for entry in archive}:
         prev_count = sum(map(lambda d: d["downloads"], archive))
         archive.append({"date": today, "downloads": count - prev_count})
-
-
-def count_github(user, package, path):
-    """Download count for the GitHub repository."""
-    repo = Github().get_repo(f"{user}/{package}")
-    count = sum(sum(map(lambda d: d.download_count, release.get_assets())) for release in repo.get_releases())
-    archive = _read_archive(path)
-    _append(archive, count)
-    _write_archive(path, archive)
-    return count
 
 
 def count_conda(package, path):
@@ -64,6 +53,6 @@ def count_pypi(package, path):
 if __name__ == "__main__":
     archives = Path("archives").resolve(True)
     _write_archive(archives / "total.json", {
-        "github": count_github("cobyqa", "cobyqa", archives / "github.json"),
+        "conda": count_conda("cobyqa", archives / "conda.json"),
         "pypi": count_pypi("cobyqa", archives / "pypi.json"),
     })

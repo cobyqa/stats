@@ -1,3 +1,2 @@
 condastats
 pypistats
-pygithub
