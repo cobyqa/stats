@@ -2650,6 +2650,11 @@
         "downloads": 28
     },
     {
+        "category": "with_mirrors",
+        "date": "2024-03-02",
+        "downloads": 10
+    },
+    {
         "category": "without_mirrors",
         "date": "2022-07-14",
         "downloads": 1
