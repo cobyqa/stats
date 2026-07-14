@@ -6756,6 +6756,11 @@
     },
     {
         "category": "with_mirrors",
+        "date": "2026-06-10",
+        "downloads": 21
+    },
+    {
+        "category": "with_mirrors",
         "date": "2026-06-11",
         "downloads": 38
     },
@@ -6908,6 +6913,11 @@
         "category": "with_mirrors",
         "date": "2026-07-11",
         "downloads": 10
+    },
+    {
+        "category": "with_mirrors",
+        "date": "2026-07-12",
+        "downloads": 4
     },
     {
         "category": "without_mirrors",
@@ -12791,6 +12801,11 @@
     },
     {
         "category": "without_mirrors",
+        "date": "2026-06-10",
+        "downloads": 15
+    },
+    {
+        "category": "without_mirrors",
         "date": "2026-06-11",
         "downloads": 17
     },
@@ -12943,5 +12958,10 @@
         "category": "without_mirrors",
         "date": "2026-07-11",
         "downloads": 5
+    },
+    {
+        "category": "without_mirrors",
+        "date": "2026-07-12",
+        "downloads": 1
     }
 ]
